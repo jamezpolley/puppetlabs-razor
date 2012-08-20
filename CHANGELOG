@@ -1,3 +1,8 @@
+2012-08-21 Puppet Labs <info@puppetlabs.com - 0.2.2
+* Add additional rz_* resources.
+* Add ability to specify razor repo.
+* Update dependency for tftp.
+
 2012-07-23 Puppet Labs <info@puppetlabs.com> - 0.2.1
 * Fix rz_image bug due to last minute changes.
 

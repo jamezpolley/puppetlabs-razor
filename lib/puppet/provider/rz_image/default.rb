@@ -62,11 +62,11 @@ Puppet::Type.type(:rz_image).provide(:default) do
       end
       case resource[:type]
       when 'os'
-        Puppet.debug "razor image add #{resource[:type]} #{resource[:source]} #{resource[:name]} #{resource[:version]}"
-        razor 'image', 'add', resource[:type], source, resource[:name], resource[:version]
+        Puppet.debug "razor image add --type #{resource[:type]} --path #{resource[:source]} --name #{resource[:name]} --version #{resource[:version]}"
+        razor 'image', 'add', '--type', resource[:type], '--path', source, '--name', resource[:name], '--version', resource[:version]
       else
-        Puppet.debug "razor image add #{resource[:type]} #{resource[:source]}"
-        razor 'image', 'add', resource[:type], source
+        Puppet.debug "razor image add --type #{resource[:type]} --path #{resource[:source]}"
+        razor 'image', 'add', 'type', resource[:type], '--source', source
       end
     ensure
       FileUtils.remove_entry_secure(tmpdir) if tmpdir

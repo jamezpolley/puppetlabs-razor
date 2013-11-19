@@ -81,7 +81,7 @@ class razor (
   }
 
   vcsrepo { $directory:
-    ensure   => latest,
+    ensure   => present,
     provider => git,
     source   => $git_source,
     revision => $git_revision,
